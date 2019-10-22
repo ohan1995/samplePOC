@@ -1,0 +1,140 @@
+/* ==========================================================================
+   #ERROR
+   ========================================================================== */
+body {
+  margin: 20px 0;
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 1.25rem;
+  width: 300px;
+}
+
+form, p {
+  margin: 8px;
+}
+
+p.note {
+  font-size: 1rem;
+  color: red;
+}
+
+input, textarea {
+ width: 70%;
+  border-radius: 0 0 10px 10px  ; 
+	height:40px;
+  padding-left: 10px;
+	padding-right: 20px;
+	padding-top: 15px;
+	padding-bottom: 10px;
+  margin-bottom: 10px;
+  
+}
+
+label {
+  width: 300px;
+  font-weight: bold;
+  display: inline-block;
+ 
+}
+
+label span {
+  font-size: 1rem;
+}
+
+label.error {
+    color: red;
+    font-size: 1rem;
+    display: block;
+    margin-top: 5px;
+}
+
+input.error, textarea.error {
+    border: 1px dashed red;
+    font-weight: 300;
+    color: red;
+}
+
+[type="submit"], [type="reset"], button, html [type="button"] {
+    margin-top: 20px;
+    border-radius: 0;
+    background: cyan;
+    color: white;
+    border: none;
+    font-weight: 300;
+    padding: 10px 0;
+    line-height: 1;
+}
+
+/* ==========================================================================
+   #CARD
+   ========================================================================== */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 60%;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  background-color: ghostwhite
+  
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.row-space {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.col-2 {
+  width: -webkit-calc((100% - 30px) / 2);
+  width: -moz-calc((100% - 30px) / 2);
+  width: calc((100% - 30px) / 2);
+}
+
+@media (max-width: 767px) {
+  .col-2 {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   #FORM
+   ========================================================================== */
+.required {
+  color: red;
+}
+.input{
+  margin-left:20%;
+  margin-top: 10%;
+}

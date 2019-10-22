@@ -1,0 +1,102 @@
+<html>
+    <head>
+      <!-- Custom CSS-->
+        <link href="regitser.css" rel="stylesheet" media="all">
+
+        <!-- Jquery CDN-->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- JavaScript-->
+<script type="text/javascript" src="regitser.js"> </script>
+
+    </head>
+    <body bgcolor="#E6E6FA">
+
+	<div   class="loading"></div>
+	<div class="message"></div>
+ <!-- Creating Card-->
+<div class="card">
+
+<!-- Form -->
+
+<form id="registerForm" action="saveCustomer" method="post">
+    <div class="input"> 
+      <h2>Sign up</h2>
+
+    <p>
+     <input id="username" name="username" placeholder="Username*">
+    </p>
+
+   <p>
+      <input id="email" name="email" placeholder="E-mail*"><br>
+      <span></span>
+    </p>
+
+    <p>
+      <input id="password" name="password" type="password" placeholder="Password*">
+    </p>
+
+    <p>
+      <input id="cnfpassword" name="cnfpassword" type="password" placeholder="Confirm Password*">
+    </p>
+
+    <p>
+      <input id="mobile" name="mobile" placeholder="Contact Number">
+    </p>
+
+    <p>
+      <label>Select Gender</label><br>
+     <input type="radio" value="m" id="radio-one" class="form-radio" name="gender">Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" value="f" id="radio-one" class="form-radio" name="gender">Female
+    </p>
+
+     <!-- DOB-->
+     <p>
+       <br> <input placeholder="Date of Birth" name="dob" class="in" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"> <br>
+     </p>
+                <!--Address-->
+         <p>
+           <textarea class="in" id="address" name="address" placeholder="Enter Your Address"></textarea><br>
+         </p>
+                <!-- Checkbox start-->
+               <p>
+                    <label>Select language you know</label><br>
+                    <input type="checkbox" class="form-checkbox" value="1" name="language" id="language">HINDI
+                    <input type="checkbox" class="form-checkbox" value="2" name="language" id="language">ENGLISH
+                    <input type="checkbox" class="form-checkbox" value="3" name="language" id="language">KANNADA
+               </p>
+                <!-- Checkbox end-->
+
+               <br>
+
+                <!-- Select Start-->
+               <p>
+               <div class="select">
+                     <select name="city">
+                           <option disabled="disabled" selected="selected">Select City</option>
+                            <option value="bhopal">Bhopal</option>
+                            <option value="indore">Indore</option>
+                            <option value="bangalore">Bangalore</option>
+                      </select>
+               </div>
+               </p>
+               <!-- Select End-->
+    <p>
+      <input class="submit" type="submit" value="SUBMIT">
+    </p>
+    </div>
+</form>
+<!-- Form End-->
+</div>
+</div>
+</div>
+<!-- Jquery Validate method cdn-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+    </body>
+</html>
