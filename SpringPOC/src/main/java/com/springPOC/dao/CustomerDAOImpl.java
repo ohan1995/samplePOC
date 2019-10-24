@@ -17,6 +17,7 @@ public class CustomerDAOImpl implements CustomerDAO{
 	}
 
 	public void saveCustomer(Customer customer) {
+			
 		
 			// insert query
 			String sql = "INSERT INTO customer (id,username, email, password, mobile,gender ,dob,address, language, city)"

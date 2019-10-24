@@ -45,41 +45,44 @@ $(document).ready(function() {
    $("#email").blur(function(){
 
        var emailVar = $(this);
+       var btn = $(".submit");
+
        $.ajax({
          type: "POST",
           url:"http://localhost:8080/SpringPOC/emailCheck",
           data:emailVar,
            success:function(responseText){
               if(responseText == " ") { // if the response is empty from backend
-                 $('#email').siblings("span").text('Sorry... Email already registered').css("color","red");
-             } 
+                 $('#emailError').html('Sorry... Email already registered').css("color","red").show();
+                btn.prop('disabled', true);
+             }if(responseText == "Ok"){
+                $('#emailError').hide();
+                btn.prop('disabled', false);
+             }
            }
         });
   });
 
+   //form submition function
+                  $("#registerForm").submit(function(e) {
 
-  //form submition function
-  $("#registerForm").submit(function(e) {
+                       e.preventDefault(); // avoid to execute the actual submit of the form.
 
-  e.preventDefault(); // avoid to execute the actual submit of the form.
+                         var form = $(this);
+                         var url = form.attr('action');
+                         $.ajax({
+                                 type: "POST",
+                                 url: "http://localhost:8080/SpringPOC/saveCustomer",
+                                 data: form.serialize(), // serializes the form's elements.
+                                 success: function(data){
+                                        $('.card').fadeOut(); // hide whole form
 
-    var form = $(this);
-    var url = form.attr('action');
-    $.ajax({
-           type: "POST",
-           url: "http://localhost:8080/SpringPOC/saveCustomer",
-           data: form.serialize(), // serializes the form's elements.
-           success: function(data)
-           {
-              $('.card').fadeOut(); // hide whole form
-
-						 //hide the loader
-						 $('.loading').fadeOut();   
-						 
-						//show the success message
-						$('.message').html('Successfully Registered! <a href = "login.html"> Login </a>').fadeIn('slow');
-           }
-           
-     });
-  });
+                                        //hide the loader
+                                        $('.loading').fadeOut();   
+                                        
+                                        //show the success message
+                                        $('.message').html('Successfully Registered! <a href = "login.html"> Login </a>').fadeIn('slow');
+                                      }   
+                           });
+                   });
 })

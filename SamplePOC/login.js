@@ -40,8 +40,7 @@ $(document).ready(function() {
                     alert("username or password incorrect")
                 } else{
                     $('#loginForm').fadeOut('slow');                
-						 
-						 
+                    
 						 //hide the loader
 						 //$('.loading').fadeOut();   
 						 
